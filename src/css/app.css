@@ -17,7 +17,6 @@ select,
 textarea {
     font-family: inherit;
     font-size: 100%;
-    line-height: 1.15;
     margin: 0;
     padding: 0;
     color: inherit;
@@ -79,10 +78,6 @@ button:-moz-focusring {
 
 [type='search']::-webkit-search-decoration {
     -webkit-appearance: none;
-}
-
-summary {
-    display: list-item;
 }
 
 [hidden] {
@@ -160,11 +155,6 @@ h6 {
     font-weight: inherit;
 }
 
-a {
-    color: inherit;
-    text-decoration: inherit;
-}
-
 img,
 object,
 svg {
@@ -183,37 +173,8 @@ svg {
     --color-active: #484848;
 }
 
-.bg-white {
-    background-color: #fff;
-}
-
-.block {
-    display: block;
-}
-
 .hidden {
     display: none;
-}
-
-.mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.overflow-auto {
-    overflow: auto;
-}
-
-.transition {
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
-}
-
-.ease-in {
-    transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-}
-
-.ease-in-out {
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -247,13 +208,6 @@ main {
     max-width: var(--content-width);
     height: 30rem;
     overflow-y: auto;
-}
-
-footer {
-    margin-top: auto;
-    text-align: center;
-    background-color: #a0aec0;
-    padding: 1rem;
 }
 
 .app {
