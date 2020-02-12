@@ -187,10 +187,6 @@ svg {
     background-color: #fff;
 }
 
-.border {
-    border-width: 1px;
-}
-
 .block {
     display: block;
 }
@@ -297,20 +293,14 @@ footer {
 .right-column {
     border: var(--border);
     flex: 0 0 60%;
+    text-align: left;
 }
 
-.email,
-.phone-number,
-.address {
+.contact-info__brief,
+.contact-info__expanded {
     font-weight: 700;
     color: var(--color-active);
-}
-
-.active,
-.active * {
-    color: #fff !important;
-    background-color: var(--color-active) !important;
-    border-color: var(--color-active);
+    padding: 0 1rem;
 }
 
 .overlay {
@@ -333,11 +323,20 @@ footer {
     color: #fff;
 }
 
-.active .contact-info__expanded,
-.active .left-column {
+.active .left-column,
+.active .contact-info__expanded {
     position: relative;
+    background-color: var(--color-active);
     z-index: 10;
-    padding: .96rem
+    padding: .96rem;
+    color: #fff !important;
+    background-color: var(--color-active) !important;
+    border-color: var(--color-active) !important;
+}
+
+.active .contact-info__expanded {
+    display: block;
+    top: -20px;
 }
 
 .symbol {
