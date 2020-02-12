@@ -5,7 +5,6 @@ const view = {
         offline: '#fb0101',
         busy: '#fdfd00',
     },
-    app: document.querySelector('#app'),
 };
 
 const model = [{
@@ -58,12 +57,13 @@ const model = [{
     },
 ];
 
-function ToggleEachClass(selectedClassesString, toggledClassString) {
+function ToggleEachElement(selectedClassesString, toggledClassString) {
     let Elements = document.querySelectorAll(selectedClassesString);
     [].forEach.call(Elements, el => el.classList.toggle(toggledClassString));
 }
 
-function addToEachClass(selectedClassesString, callFunction) {
+
+function addToEachElement(selectedClassesString, callFunction) {
     let Elements = document.querySelectorAll(selectedClassesString);
     [].forEach.call(Elements, callFunction);
 }
@@ -72,16 +72,17 @@ function addToEachClass(selectedClassesString, callFunction) {
 const dropdown = document.querySelector('#selectDetail');
 dropdown.onchange = function() {
     if (dropdown.options.selectedIndex === 1) {
-        addToEachClass('.phone-number', el => el.classList.toggle('hidden'));
-        addToEachClass('.email', el => el.classList.toggle('hidden'));
+        addToEachElement('.phone-number', el => el.classList.toggle('hidden'));
+        addToEachElement('.email', el => el.classList.toggle('hidden'));
     } else {
-        addToEachClass('.email', el => el.classList.toggle('hidden'));
-        addToEachClass('.phone-number', el => el.classList.toggle('hidden'));
+        addToEachElement('.email', el => el.classList.toggle('hidden'));
+        addToEachElement('.phone-number', el => el.classList.toggle('hidden'));
     }
 };
 
 
-// client side rendering of data when JS is available, in reality server side is preferable especially when planning for progressive enhancement/graceful degradation
+// client side rendering of data when JS is available, 
+// in reality server side is preferable especially when planning for progressive enhancement/graceful degradation
 function CreateRows(HTMLtag, ParentHTMLtag) {
     for (let i = 0; i < model.length; i++) {
         var newElement = document.createElement(HTMLtag);
@@ -115,7 +116,7 @@ function CreateRows(HTMLtag, ParentHTMLtag) {
 }
 document.body.onload = function() {
     CreateRows('article', '#infoList');
-    ToggleEachClass('select', 'hidden');
+    ToggleEachElement('select', 'hidden');
     const buttons = document.querySelectorAll(".contact-info")
     for (const button of buttons) {
         button.addEventListener('click', function(event) {
