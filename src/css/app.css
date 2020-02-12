@@ -292,10 +292,14 @@ article.active {
 .active .contact-info__expanded--js {
     background-color: var(--color-active);
     z-index: 10;
-    padding: .96rem;
+    padding: 1rem;
     color: #fff !important;
     background-color: var(--color-active) !important;
-    border-color: var(--color-active) !important;
+    border-width: 0 !important;
+}
+
+.active .right-column {
+    border-width: 0;
 }
 
 .overlay {
