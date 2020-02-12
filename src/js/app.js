@@ -96,7 +96,7 @@ function CreateRows(HTMLtag, ParentHTMLtag) {
             <p class="email">${model[i].email}</p>
             <p class="hidden phone-number">323-555-1234</p>
         </div>
-            <div class="hidden roll-over contact-info__expanded">
+            <div class="hidden roll-over contact-info__expanded--js">
                 <a href="mailto:${model[i].email}" class="email-expanded">
                     ${model[i].email}
                 </a>
@@ -114,6 +114,7 @@ function CreateRows(HTMLtag, ParentHTMLtag) {
 }
 document.body.onload = function() {
     CreateRows('article', '#infoList');
+    ToggleEachClass('select', 'hidden');
     const buttons = document.querySelectorAll(".contact-info")
     for (const button of buttons) {
         button.addEventListener('click', function(event) {

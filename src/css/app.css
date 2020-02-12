@@ -281,6 +281,10 @@ article.active {
     position: relative
 }
 
+.contact-info {
+    position: relative;
+}
+
 .active .left-column,
 .active .contact-info__expanded {
     position: relative;
@@ -292,9 +296,9 @@ article.active {
     border-color: var(--color-active) !important;
 }
 
-.active .contact-info__expanded {
-    position: absolute;
+.active .contact-info__expanded--js {
     display: block;
+    position: absolute;
     top: 0;
     line-height: 2;
 }
