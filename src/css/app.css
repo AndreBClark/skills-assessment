@@ -252,7 +252,6 @@ main {
 
 .contact-info__brief,
 .contact-info__expanded {
-    font-weight: 700;
     color: var(--color-active);
     padding: 0 1rem;
 }
@@ -287,7 +286,6 @@ article.active {
 
 .active .left-column,
 .active .contact-info__expanded {
-    position: relative;
     background-color: var(--color-active);
     z-index: 10;
     padding: .96rem;
@@ -302,6 +300,9 @@ article.active {
     top: 0;
     line-height: 2;
 }
+
+a {
+    color: #26abae;
 }
 
 .symbol {
