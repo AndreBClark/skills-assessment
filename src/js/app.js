@@ -66,7 +66,7 @@ function addToEachClass(selectedClassesString, callFunction) {
     let Elements = document.querySelectorAll(selectedClassesString);
     [].forEach.call(Elements, callFunction);
 }
-addToEachClass('article', el => el.classList.toggle('hidden'));
+
 const dropdown = document.querySelector('#selectDetail');
 dropdown.onchange = function() {
     if (dropdown.options.selectedIndex === 1) {
@@ -79,30 +79,31 @@ dropdown.onchange = function() {
 };
 
 
+
 function CreateRows(HTMLtag, ParentHTMLtag) {
     for (let i = 0; i < model.length; i++) {
         var newElement = document.createElement(HTMLtag);
         newElement.innerHTML = `
-<div class="left-column">
-<svg class="status-indicator" fill="${model[i].status}">
-<use xlink:href="#statusIndicator" />
-</svg>
-<p class="name">${model[i].name}</p>
-</div>
-<button class="right-column contact-info">
-<div class="contact-info__brief">
-<p class="email">${model[i].email}</p>
-<p class="hidden phone-number">323-555-1234</p>
-</div>
-<div class="hidden roll-over contact-info__expanded">
-<p class="email">${model[i].email}</p>
-<p class="phone-number">${model[i].phone}</p>
-<p class="address">
-6539 Wilton Ave. <br />
-Culver City CA 90234
-</p>
-</div>
-</button>
+        <div class="left-column">
+            <svg class="status-indicator" fill="${model[i].status}">
+                <use xlink:href="#statusIndicator" />
+            </svg>
+            <p class="name">${model[i].name}</p>
+        </div>
+        <button class="right-column contact-info">
+        <div class="contact-info__brief">
+            <p class="email">${model[i].email}</p>
+            <p class="hidden phone-number">323-555-1234</p>
+        </div>
+            <div class="hidden roll-over contact-info__expanded">
+                <p class="email-expanded">${model[i].email}</p>
+                <p class="expanded-phone">${model[i].phone}</p>
+                <p class="address">
+                6539 Wilton Ave. <br />
+                Culver City CA 90234
+                </p>
+            </div>
+        </button>
         `;
         const Parent = document.querySelector(ParentHTMLtag);
         Parent.appendChild(newElement);
