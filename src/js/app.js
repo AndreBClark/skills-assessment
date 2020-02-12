@@ -97,8 +97,10 @@ function CreateRows(HTMLtag, ParentHTMLtag) {
             <p class="hidden phone-number">323-555-1234</p>
         </div>
             <div class="hidden roll-over contact-info__expanded">
-                <p class="email-expanded">${model[i].email}</p>
-                <p class="expanded-phone">${model[i].phone}</p>
+                <a href="mailto:${model[i].email}" class="email-expanded">
+                    ${model[i].email}
+                </a>
+                <a href="tel:${model[i].phone}" class="expanded-phone">${model[i].phone}</a>
                 <p class="address">
                 6539 Wilton Ave. <br />
                 Culver City CA 90234
