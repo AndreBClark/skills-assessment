@@ -58,10 +58,11 @@ const model = [{
     },
 ];
 
-// function ToggleEachClass(selectedClassesString, toggledClassString) {
-//     let Elements = document.querySelectorAll(selectedClassesString);
-//     [].forEach.call(Elements, el => el.classList.toggle(toggledClassString));
-// }
+function ToggleEachClass(selectedClassesString, toggledClassString) {
+    let Elements = document.querySelectorAll(selectedClassesString);
+    [].forEach.call(Elements, el => el.classList.toggle(toggledClassString));
+}
+
 function addToEachClass(selectedClassesString, callFunction) {
     let Elements = document.querySelectorAll(selectedClassesString);
     [].forEach.call(Elements, callFunction);
@@ -109,4 +110,14 @@ function CreateRows(HTMLtag, ParentHTMLtag) {
         Parent.appendChild(newElement);
     }
 }
-document.body.onload = CreateRows('article', '#infoList');
+document.body.onload = function() {
+    CreateRows('article', '#infoList');
+    const buttons = document.querySelectorAll(".contact-info")
+    for (const button of buttons) {
+        button.addEventListener('click', function(event) {
+            console.log(`clicked ${event}`)
+            this.parentNode.classList.toggle('active');
+            document.querySelector('#infoList').classList.toggle('overlay');
+        })
+    }
+}
