@@ -1,9 +1,9 @@
 const view = {
     status: {
-        online: 'green',
-        away: 'yellow',
-        offline: 'red',
-        busy: 'goldenRod',
+        online: '#04f621',
+        away: '#b1b11a',
+        offline: '#fb0101',
+        busy: '#fdfd00',
     },
     app: document.querySelector('#app'),
 };
@@ -68,6 +68,7 @@ function addToEachClass(selectedClassesString, callFunction) {
     [].forEach.call(Elements, callFunction);
 }
 
+// swap between displaying email and phone number 
 const dropdown = document.querySelector('#selectDetail');
 dropdown.onchange = function() {
     if (dropdown.options.selectedIndex === 1) {
@@ -80,7 +81,7 @@ dropdown.onchange = function() {
 };
 
 
-
+// client side rendering of data when JS is available, in reality server side is preferable especially when planning for progressive enhancement/graceful degradation
 function CreateRows(HTMLtag, ParentHTMLtag) {
     for (let i = 0; i < model.length; i++) {
         var newElement = document.createElement(HTMLtag);
