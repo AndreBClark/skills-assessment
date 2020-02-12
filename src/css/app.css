@@ -285,7 +285,8 @@ article.active {
 }
 
 .active .left-column,
-.active .contact-info__expanded {
+.active .contact-info__expanded,
+.active .contact-info__expanded--js {
     background-color: var(--color-active);
     z-index: 10;
     padding: .96rem;
