@@ -86,42 +86,44 @@ dropdown.onchange = function() {
 function CreateRows(HTMLtag, ParentHTMLtag) {
     for (let i = 0; i < model.length; i++) {
         var newElement = document.createElement(HTMLtag);
+        newElement.setAttribute('class', 'contact-info');
         newElement.innerHTML = `
-        <div class="left-column">
-            <svg class="status-indicator" fill="${model[i].status}">
-                <use xlink:href="#statusIndicator" />
-            </svg>
-            <p class="name">${model[i].name}</p>
-        </div>
-        <button class="right-column contact-info">
-        <div class="contact-info__brief">
-            <p class="email">${model[i].email}</p>
-            <p class="hidden phone-number">323-555-1234</p>
-        </div>
-            <div class="hidden roll-over contact-info__expanded--js">
-                <a href="mailto:${model[i].email}" class="email-expanded">
-                    ${model[i].email}
-                </a>
-                <a href="tel:${model[i].phone}" class="expanded-phone">${model[i].phone}</a>
-                <p class="address">
-                6539 Wilton Ave. <br />
-                Culver City CA 90234
-                </p>
+            <div class="left-column">
+                <svg class="status-indicator" fill="${model[i].status}">
+                    <use xlink:href="#statusIndicator" />
+                </svg>
+                <p class="name">${model[i].name}</p>
             </div>
-        </button>
+            <div class="right-column">
+                <div class="contact-info__brief">
+                    <p class="email">${model[i].email}</p>
+                    <p class="hidden phone-number">323-555-1234</p>
+                </div>
+                <div class="hidden roll-over contact-info__expanded--js">
+                    <a href="mailto:${model[i].email}" class="email-expanded">
+                        ${model[i].email}
+                    </a>
+                    <a href="tel:${model[i].phone}" class="expanded-phone">${model[i].phone}</a>
+                    <p class="address">
+                    6539 Wilton Ave. <br />
+                    Culver City CA 90234
+                    </p>
+                </div>
+            </div>
         `;
         const Parent = document.querySelector(ParentHTMLtag);
         Parent.appendChild(newElement);
+
     }
 }
 document.body.onload = function() {
-    CreateRows('article', '#infoList');
+    CreateRows('button', '#infoList');
     ToggleEachElement('select', 'hidden');
     const buttons = document.querySelectorAll(".contact-info")
     for (const button of buttons) {
         button.addEventListener('click', function(event) {
             console.log(`clicked ${event}`)
-            this.parentNode.classList.toggle('active');
+            button.classList.toggle('active');
             document.querySelector('#infoList').classList.toggle('overlay');
         })
     }

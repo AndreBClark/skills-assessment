@@ -169,10 +169,10 @@ svg {
 /* variables */
 
 :root {
-    --gradient: linear-gradient(0deg, rgba(0, 0, 0, 0.21), 255, 255, 255, 0.21);
+    --gradient: linear-gradient(0deg, rgba(0, 0, 0, 0.21), rgba(255, 255, 255, 0.21));
     --border: solid 1px #131313;
     --border-radius: 1rem;
-    --content-width: 72rem;
+    --content-width: 40rem;
     --color-active: #484848;
     /* use color with higher contrast to meet WCAG AA guidelines https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html#rationale-for-the-ratios-chosen */
     --color-active-text: #7d7d7d;
@@ -205,17 +205,16 @@ header {
     border-top-right-radius: 0.5rem;
 }
 
-article {
+button {
     display: flex;
     justify-content: space-between;
-    background-color: #212121;
     align-content: flex-start;
 }
 
 
 /* zebra stripe row pattern */
 
-article:nth-child(2n) {
+button:nth-child(2n) {
     background-color: #1a1a1a;
 }
 
@@ -229,6 +228,7 @@ article:nth-child(2n) {
     border-radius: 1rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     width: 24rem;
+    max-width: 100%;
 }
 
 
@@ -236,7 +236,7 @@ article:nth-child(2n) {
 
 main {
     max-width: var(--content-width);
-    height: 30rem;
+    max-height: 30rem;
     overflow-y: auto;
 }
 
@@ -258,20 +258,26 @@ main {
     flex: 0 0 40%;
     height: 100%;
     display: flex;
-    padding: 0.96rem;
+    padding: 0.46rem;
     border: var(--border);
 }
 
 .right-column {
     border: var(--border);
     flex: 0 0 60%;
+    padding: .5rem 0;
     text-align: left;
+}
+
+.address {
+    margin-top: .5rem;
+    line-height: 1.5;
 }
 
 .contact-info__brief,
 .contact-info__expanded {
     color: var(--color-active-text);
-    padding: 0 1rem;
+    padding: 0 .47rem;
 }
 
 .name {
@@ -280,6 +286,7 @@ main {
 
 .contact-info {
     position: relative;
+    width: 100%;
 }
 
 
@@ -294,7 +301,8 @@ article.active {
 .active .contact-info__expanded--js {
     background-color: var(--color-active);
     z-index: 10;
-    padding: 1rem;
+    padding: .46rem;
+    padding-top: 0;
     color: #fff !important;
     background-color: var(--color-active) !important;
     border-width: 0 !important;
